@@ -1,8 +1,11 @@
 var express = require("express");
 var app = express();
 
+
+app.set('port', (process.env.PORT || 3000));
+
 app.use(express.static("dist/"));
 
-app.listen(3000,function(){
-    console.log("Escutando");
+app.listen(app.get("port"),function(){
+    console.log("Servidor Iniciado");
 });

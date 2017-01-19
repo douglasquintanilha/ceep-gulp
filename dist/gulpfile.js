@@ -10,6 +10,9 @@ const imagemin = require('gulp-imagemin');
 const imageminPngquant = require('imagemin-pngquant');
 
 
+
+
+
 gulp.task("default", function () {
     gulp.start("usemin");
 });
@@ -21,16 +24,16 @@ gulp.task('clean', function() {
 
 
 gulp.task("copy",["clean"], function (){
-    return gulp.src("src/**/*")
+    return gulp.src("./**/*")
                 .pipe(gulp.dest("dist"));
 });
 
 gulp.task("prefix", ["copy"], function(){
-    return gulp.src("src/css/*.css")
+    return gulp.src("dist/css/*.css")
                 .pipe(autoprefixer({
                     browsers: ["last 2 versions","IE 10"]
                 }))
-                .pipe(gulp.dest("dist/css/"));
+                .pipe(gulp.dest("css/"));
 });
 
 gulp.task('usemin',["prefix"], function() {
@@ -43,13 +46,13 @@ gulp.task('usemin',["prefix"], function() {
 });
 
 gulp.task('imagemin',["copy"], function(){
-    gulp.src('src/img/**/*')
+    gulp.src('./img/**/*')
         .pipe(
             imagemin([
                imageminPngquant(),
            ])
        )
-        .pipe(gulp.dest('dist/img/'))
+        .pipe(gulp.dest('dist/imgs'))
 });
 
 gulp.task('browser-sync', function() {
@@ -59,5 +62,5 @@ gulp.task('browser-sync', function() {
         }
     });
 
-    gulp.watch("src/**/*").on('change', browserSync.reload);
+    gulp.watch("./**/*").on('change', browserSync.reload);
 });

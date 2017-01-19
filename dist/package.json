@@ -1,0 +1,30 @@
+{
+  "name": "ceep",
+  "version": "1.0.0",
+  "description": "Professor Douglas (douglas.quintanilha@caelum.com.br)",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-pngquant": "^5.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-usemin": "^0.3.27"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raigomes/WD-47.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raigomes/WD-47/issues"
+  },
+  "homepage": "https://github.com/raigomes/WD-47#readme"
+}
